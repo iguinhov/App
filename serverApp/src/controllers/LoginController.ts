@@ -21,7 +21,7 @@ class LoginController {
         const usuarios = await knex('tb_usuarios').select('id', 'ds_login', 'ds_password').where({ 'ds_login': user, 'ds_password': password }).first();
         
         if (!usuarios) {
-            return response.status(400).json({ message: 'Login not found!!'})
+            return response.status(400).json({ message: 'Login not found!!!'})
         }
        
         return response.json({ usuarios });
